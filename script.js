@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Validation
         const docUrl = document.getElementById('docUrl').value.trim();
         const language = document.getElementById('language').value;
+        const writtenBy = document.getElementById('writtenBy').value;
 
-
-        if (!docUrl || !language) {
+        if (!docUrl || !language || !writtenBy) {
             showStatus('Please fill in all fields.', 'error');
             return;
         }
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const payload = {
             docUrl,
             language,
-
+            writtenBy,
             timestamp: new Date().toISOString()
         };
 
